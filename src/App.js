@@ -8,8 +8,8 @@ import Header from './components/Header';
 function App() {
   return (
     <BrowserRouter>
-      <Routes />
       <Header />
+      <Routes />
       <GlobalStyles />
     </BrowserRouter>
   );
