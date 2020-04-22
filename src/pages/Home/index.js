@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
 
 import { ProductList } from './styles';
 
-export default class Home extends Component {
-  state = {
-    products: [],
-  };
+export default function Home() {
+  const [products, setProducts] = useState([]);
 
-  async componentDidMount() {
-    const response = await api.get('products');
+  useEffect(() => {
+    async function loadProducts() {
+      const response = await api.get('products');
 
-    const data = response.data.map(product => ({
-      ...product,
-      priceFormatted: formatPrice(product.price),
-    }));
+      const data = response.data.map(product => ({
+        ...product,
+        priceFormatted: formatPrice(product.price),
+      }));
 
-    this.setState({ products: data });
-  }
-
-  render() {
-    const { products } = this.state;
+      setProducts(data);
+    }
+    loadProducts();
+  }, []);
 
     return (
       <ProductList>
@@ -47,4 +45,4 @@ export default class Home extends Component {
       </ProductList>
     );
   }
-}
+
