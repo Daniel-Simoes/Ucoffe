@@ -30,35 +30,35 @@ export default function Cart() {
         <tbody>
         {cart.map(product => (
           <tr>
-          <td>
-            <img
-              src={product.image}
-              alt={product.title}
-            />
-          </td>
-          <td>
-            <strong>{product.title}</strong>
-            <span>{product.priceFormatted}</span>
-          </td>
-          <td>
-            <div>
+            <td>
+              <img
+                src={product.image}
+                alt={product.title}
+              />
+            </td>
+            <td>
+              <strong>{product.title}</strong>
+              <span>{product.priceFormatted}</span>
+            </td>
+            <td>
+              <div>
+                <button type="button">
+                  <MdRemoveCircleOutline size={20} color="#7159c1" />
+                </button>
+                <input type="number" readOnly value={product.amount} />
+                <button type="button">
+                  <MdAddCircleOutline size={20} color="#7159c1" />
+                </button>
+              </div>
+            </td>
+            <td>
+              <strong>R$ 12,00</strong>
+            </td>
+            <td>
               <button type="button">
-                <MdRemoveCircleOutline size={20} color="#7159c1" />
+                <MdDelete size={20} color="#7159c1" />
               </button>
-              <input type="number" readOnly value={product.amount} />
-              <button type="button">
-                <MdAddCircleOutline size={20} color="#7159c1" />
-              </button>
-            </div>
-          </td>
-          <td>
-            <strong>R$ 12,00</strong>
-          </td>
-          <td>
-            <button type="button">
-              <MdDelete size={20} color="#7159c1" />
-            </button>
-          </td>
+            </td>
         </tr>
         ))}
 
