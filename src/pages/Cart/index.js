@@ -6,15 +6,24 @@ import {
   MdDelete,
 } from 'react-icons/md';
 
-import * as CartActions from '../../store/modules/cart/actions';
-
 import { Container, ProductTable, Total } from './styles';
+import * as CartActions from '../../store/modules/cart/actions';
+import { formatPrice } from '../../util/format';
 
 export default function Cart() {
   const cart = useSelector(state =>
     state.cart.map(product => ({
       ...product,
+      subtotal: formatPrice(product.price * product.amount),
     }))
+  );
+
+  const total = useSelector(state =>
+    formatPrice(
+      state.cart.reduce((total, product) => {
+        return total + product.price * product.amount;
+      }, 0)
+    )
   );
 
   const dispatch = useDispatch();
@@ -68,7 +77,7 @@ export default function Cart() {
               </div>
             </td>
             <td>
-              <strong>R$ 12,00</strong>
+              <strong>{product.subtotal}</strong>
             </td>
             <td>
               <button type="button"
@@ -87,7 +96,7 @@ export default function Cart() {
         <button type="submit">Proceed to Checkout</button>
         <Total>
           <span>TOTAL:</span>
-          <strong>R$ 120,00</strong>
+          <strong>{total}</strong>
         </Total>
       </footer>
     </Container>
