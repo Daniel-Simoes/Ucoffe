@@ -32,5 +32,6 @@ rules: {
     { extensions: ['.jsx', '.js'] }
   ],
   'import/prefer-default-export': 'off',
+  'no-console':["error", { alow: [ "tron"] }]
 },
 };

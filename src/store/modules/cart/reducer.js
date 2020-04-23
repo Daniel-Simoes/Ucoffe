@@ -4,6 +4,6 @@ export default function cart(state = [], action) {
     case 'ADD_TO_CART':
       return [ ...state, action.product];
       default:
-        return state
+        return state;
       }
     }
