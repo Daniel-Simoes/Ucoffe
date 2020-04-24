@@ -36,9 +36,9 @@ export default function Home() {
   }, []);
 
 
-  function handleAddProduct(product) {
+  function handleAddProduct(id) {
     // dispara uma ACTION para o redux
-    dispatch(CartActions.addToCart(product));
+    dispatch(CartActions.addToCartRequest(id));
   }
 
     return (
@@ -53,7 +53,7 @@ export default function Home() {
             <span>{product.priceFormatted}</span>
 
             <button type="button"
-                    onClick={() => handleAddProduct(product)}>
+                    onClick={() => handleAddProduct(product.id)}>
               <div>
                 <MdAddShoppingCart size={16} color="#FFF" />
                 {amount[product.id] || 0}
