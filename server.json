@@ -26,6 +26,7 @@
     }
   ],
   "products": [
+
     {
       "id": 1,
       "title": "Americano",
@@ -45,19 +46,31 @@
       "image": "https://www.vitamix.com/media/recipe/rcpMochaMintShake/images/500xNxmochamintshakemainjpg.jpg.pagespeed.ic.zBunxCZQDu.jpg"
     },
     {
-      "id": 5,
+      "id": 4,
       "title": "Cappuccino",
       "price": 3.50,
       "image": "https://www.vitamix.com/media/recipe/rcpBrandyAlexander/images/500xNxbrandyalexandarmainjpg.jpg.pagespeed.ic.J04QL_qfe_.jpg"
     },
     {
-      "id": 6,
+      "id": 5,
       "title": "Macchiato",
       "price": 9.50,
       "image": "https://www.vitamix.com/media/recipe/rcpFrozenIrishCoffee/images/500xNxfrozenirishcoffeemainjpg.jpg.pagespeed.ic.y_AzpI9krd.jpg"
     },
     {
-      "id": 4,
+      "id": 6,
+      "title": "Flat White",
+      "price": 8.40,
+      "image": "https://www.vitamix.com/media/recipe/rcpChocolateShake/images/500xNxchocolatemilkshakemainjpg.jpg.pagespeed.ic.6CphSy1jDb.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Macchiato",
+      "price": 9.50,
+      "image": "https://www.vitamix.com/media/recipe/rcpFrozenIrishCoffee/images/500xNxfrozenirishcoffeemainjpg.jpg.pagespeed.ic.y_AzpI9krd.jpg"
+    },
+    {
+      "id": 8,
       "title": "Flat White",
       "price": 8.40,
       "image": "https://www.vitamix.com/media/recipe/rcpChocolateShake/images/500xNxchocolatemilkshakemainjpg.jpg.pagespeed.ic.6CphSy1jDb.jpg"

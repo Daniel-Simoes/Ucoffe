@@ -3,9 +3,10 @@ import { darken } from 'polished';
 
 export const ProductList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
   list-style: none;
+
 
   li {
     display: flex;
@@ -14,10 +15,11 @@ export const ProductList = styled.ul`
     border-radius: 8px;
     padding: 20px;
 
+
     img {
       align-self: center;
       border-radius: 50%;
-      max-height: 250px;
+      max-height: 160px;
     }
 
     > strong {
@@ -67,3 +69,4 @@ export const ProductList = styled.ul`
     }
   }
 `;
+
