@@ -3,7 +3,7 @@ import api from '../../../services/api';
 import { formatPrice } from '../../../util/format';
 
 import { addToCartSuccess, updateAmount } from './actions';
-
+import { toast } from 'react-toastify';
 
 function* addToCart({ id }) {
   const productExists = yield select(state =>
@@ -18,7 +18,7 @@ function* addToCart({ id }) {
   const amount = currentAmount + 1;
 
   if (amount > stockAmount) {
-    console.tron.warn('ERRO');
+    toast.error('Sorry, This Item is temporarily out of stock!');
     return;
   }
 
