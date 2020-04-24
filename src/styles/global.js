@@ -12,7 +12,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: rgba(52,53,102,8)
+    background: rgba(0,0,0,0.8)
     url(${background}) no-repeat center top;
     -webkit-font-smoothing: antialiased;
   }

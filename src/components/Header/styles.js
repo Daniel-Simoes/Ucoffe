@@ -6,6 +6,8 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 25px 0;
+  margin-top:-50px;
+
 `;
 
 export const Cart = styled(Link)`
@@ -26,7 +28,7 @@ export const Cart = styled(Link)`
 
   strong {
     display: block;
-    color: #fff;
+    color: #CD8500;
   }
 
   span {

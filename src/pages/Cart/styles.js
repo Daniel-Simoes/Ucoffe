@@ -3,8 +3,8 @@ import { darken } from 'polished';
 
 export const Container = styled.main`
   padding: 30px;
-  background: #fff;
-  border-radius: 4px;
+  background: rgba(250, 250, 250, 0.3);
+  border-radius: 8px;
 
   footer {
     margin-top: 30px;
@@ -13,7 +13,7 @@ export const Container = styled.main`
     align-items: center;
 
     button {
-      background: #7159c1;
+      background: #035639;
       color: #fff;
       border: 0;
       border-radius: 4px;
@@ -23,7 +23,7 @@ export const Container = styled.main`
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.04, '#7159c1')};
+        background: ${darken(0.04, '#035639')};
       }
     }
   }
@@ -34,22 +34,24 @@ export const ProductTable = styled.table`
 
   }
   thead th {
-    color: #999;
+    color: #fff;
     text-align: left;
     padding: 12px;
   }
 
   tbody td {
     padding: 12px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #fff;
   }
 
   img {
-    height: 100px;
+    margin-left:50px;
+    height: 130px;
+    border-radius: 50%;
   }
 
   strong {
-    color:#333;
+    color:#fff;
     display: block;
   }
   span {
@@ -65,6 +67,7 @@ export const ProductTable = styled.table`
 
     input {
       border: 1px solid #ddd;
+      background: rgba(250, 250, 250, 0.3);
       border-radius: 3px;
       color: #666;
       padding: 6px;

@@ -10,12 +10,13 @@ export const ProductList = styled.ul`
   li {
     display: flex;
     flex-direction: column;
-    background: #fff;
-    border-radius: 4px;
+    background: rgba(250, 250, 250, 0.3);
+    border-radius: 8px;
     padding: 20px;
 
     img {
       align-self: center;
+      border-radius: 50%;
       max-height: 250px;
     }
 
@@ -33,7 +34,7 @@ export const ProductList = styled.ul`
     }
 
     button {
-      background: #7159c1;
+      background: #035639;
       color: #fff;
       border: 0;
       border-radius: 4px;
@@ -44,7 +45,7 @@ export const ProductList = styled.ul`
       align-items: center;
 
       &:hover {
-        background: ${darken(0.04, '#7159c1')};
+        background: ${darken(0.04, '#035639')};
       }
 
       div {
