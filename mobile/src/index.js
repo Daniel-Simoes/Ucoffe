@@ -8,7 +8,7 @@ export default function () {
   return (
     <>
       <Routes />
-      <StatusBar barStyle="light-content" backgroundColor="#333" />
+      <StatusBar barStyle="light-content" backgroundColor="#3a3b3d" />
     </>
   );
 }
