@@ -3,6 +3,8 @@ import { View } from 'react-native';
 
 // import { Container } from './styles';
 
-export default function cart() {
-  return <View />;
+export default function Cart() {
+  return (
+    <View />
+  );
 }

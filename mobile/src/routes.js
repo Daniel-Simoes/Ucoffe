@@ -10,6 +10,7 @@ const Routes = createAppContainer(
       Cart,
     },
     {
+      headerLayoutPreset: false,
       defaultNavigationOptions: {
         headerStyle: { backgroundColor: '#333' },
       },
