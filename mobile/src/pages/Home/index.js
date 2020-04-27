@@ -6,3 +6,6 @@ import { View } from 'react-native';
 export default function home() {
   return <View />;
 }
+home.navigationOptions = {
+  title: null,
+};
