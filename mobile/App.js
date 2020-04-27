@@ -1,14 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
-export default function () {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Hello Ucoffe!</Text>
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -22,3 +14,11 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
+
+export default function () {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.welcome}>Hello Ucoffe!</Text>
+    </View>
+  );
+}
