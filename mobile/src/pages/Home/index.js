@@ -41,7 +41,7 @@ export default function home() {
           </AddButton>
         </Product>
       </Container>
-      <Footer />
+      <Footer buttonTitle="GO TO CART" buttonIcon="keyboard-arrow-right" />
     </>
   );
 }

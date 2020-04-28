@@ -57,8 +57,9 @@ export const Box = styled.View`
 export const Product = styled.View`
   flex-direction: row;
   border-bottom-width: ${(props) => (props.last ? '0' : '1px')};
-  border-bottom-color: #ddd;
+  border-bottom-color: #3a3b3d;
   padding: 15px;
+  height: 130px;
 `;
 
 export const ProductInfo = styled.View`
@@ -68,12 +69,6 @@ export const ProductInfo = styled.View`
 
 export const ProductTitle = styled.Text`
   font-size: 13px;
-`;
-
-export const ProductDescription = styled.Text`
-  font-size: 16px;
-  margin: 0 8px;
-  color: #fff;
 `;
 
 export const ProductPrice = styled.Text`

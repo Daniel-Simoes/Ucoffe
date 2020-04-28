@@ -11,17 +11,17 @@ import {
   ButtonText,
 } from './styles';
 
-export default function BottomBar() {
+export default function BottomBar({ buttonTitle, buttonIcon }) {
   return (
     <Container>
       <Wrapper>
         <TotalWrapper>
           <TotalLabel>TOTAL</TotalLabel>
-          <TotalValue>$10,50</TotalValue>
+          <TotalValue>$6.50</TotalValue>
         </TotalWrapper>
         <Button>
-          <ButtonText>GO TO CART</ButtonText>
-          <Icon name="keyboard-arrow-right" color="#FFF" size={18} />
+          <ButtonText>{buttonTitle}</ButtonText>
+          <Icon name={buttonIcon} color="#FFF" size={18} />
         </Button>
       </Wrapper>
     </Container>
