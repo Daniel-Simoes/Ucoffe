@@ -34,22 +34,19 @@ export default function Cart() {
     loadProducts();
   }, []);
 
-  console.tron.log(products);
 
   return (
     <>
       <Container>
         <Box>
-          <Product>
+        {products.map(product => (
+          <Product key={product.id}>
             <ProductImage
-              source={{
-                uri:
-                  'https://www.waterymouthcafe.co.nz/wp-content/uploads/2017/07/The-insiders-guide-to-great-coffee-from-the-baristas-at-Watery-Mouth-cafe-Blenheim1-500x500.jpg',
-              }}
+              source={{ uri: product.image }}
             />
             <ProductInfo>
-              <ProductTitle>AMERICANO</ProductTitle>
-              <ProductPrice>$6,50</ProductPrice>
+              <ProductTitle>{product.title}</ProductTitle>
+              <ProductPrice>${product.price}</ProductPrice>
               <ProductRemove>
                 <Icon name="delete-forever" size={28} color="#999" />
               </ProductRemove>
@@ -67,6 +64,7 @@ export default function Cart() {
               <ProductSubtotal>$6,50</ProductSubtotal>
             </ProductOrderInfo>
           </Product>
+          ))}
         </Box>
       </Container>
       <Footer buttonTitle="CHECKOUT" buttonIcon="payment" />

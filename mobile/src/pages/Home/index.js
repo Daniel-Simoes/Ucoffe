@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
 import Footer from '../../components/footer';
@@ -39,6 +40,7 @@ export default function Home() {
   return (
     <>
       <Container>
+        <ScrollView>
         {products.map(product => (
 
             <Product key={product.id}>
@@ -59,7 +61,7 @@ export default function Home() {
 
         ))}
 
-
+</ScrollView>
       </Container>
       <Footer buttonTitle="GO TO CART" buttonIcon="keyboard-arrow-right" />
   </>
