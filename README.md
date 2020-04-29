@@ -11,6 +11,9 @@ The structure used for this application is scalable, so fell free to use in your
 
 The fake data comes from Json Server
 
+## 💻 Apresentation Web
+
+   ![uCoffeeDesktop](https://github.com/Daniel-Simoes/Ucoffe/blob/master/ucoffeeDesktop.gif)
 
 ## :rocket:uCoffee Installation
 
