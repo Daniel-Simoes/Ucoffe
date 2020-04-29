@@ -1,51 +1,64 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import api from '../../services/api';
 import Footer from '../../components/footer';
 
 import {
   Container,
+  List,
   AddButton,
   ProductAmountText,
   Product,
   ProductTitle,
-  ProductDescription,
   ProductPrice,
-  ProductImage,
+  Image,
   AddButtonText,
   ProductAmount,
 } from './styles';
 
-export default function home() {
-  return (
-    <>
-      <Container>
-        <Product>
-          <ProductImage
-            source={{
-              uri:
-                'https://www.waterymouthcafe.co.nz/wp-content/uploads/2017/07/The-insiders-guide-to-great-coffee-from-the-baristas-at-Watery-Mouth-cafe-Blenheim1-500x500.jpg',
-            }}
-          />
-          <ProductTitle>AMERICANO</ProductTitle>
-          <ProductDescription>
-            A long black coffee, prepared by diluting an espresso with hot
-            water.
-          </ProductDescription>
-          <ProductPrice>$6.50</ProductPrice>
-          <AddButton>
-            <ProductAmount>
-              <Icon name="add-shopping-cart" color="#FFF" size={20} />
-              <ProductAmountText>100</ProductAmountText>
-            </ProductAmount>
-            <AddButtonText>ADD TO CART</AddButtonText>
-          </AddButton>
-        </Product>
-      </Container>
-      <Footer buttonTitle="GO TO CART" buttonIcon="keyboard-arrow-right" />
-    </>
-  );
-}
+export default function Home() {
+  const [products, setProducts] = useState([]);
 
-home.navigationOptions = {
-  title: null,
-};
+
+
+  useEffect(() => {
+    async function loadProducts() {
+      const response = await api.get('products');
+
+      const data = response.data.map(product => ({
+        ...product,
+      }));
+
+      setProducts(data);
+    }
+    loadProducts();
+  }, []);
+  console.tron.log(products);
+
+  return (
+      <Container>
+        <List>
+          { products.map(product => (
+            <Product key={product.id}>
+              <Image
+                src={product.image}
+                alt={product.title}
+              />
+              <ProductTitle>{product.title}</ProductTitle>
+
+              <ProductPrice>$6.50</ProductPrice>
+              <AddButton>
+                <ProductAmount>
+                  <Icon name="add-shopping-cart" color="#FFF" size={20} />
+                  <ProductAmountText>100</ProductAmountText>
+                </ProductAmount>
+                <AddButtonText>ADD TO CART</AddButtonText>
+              </AddButton>
+            </Product>
+          ))}
+        </List>
+        <Footer buttonTitle="GO TO CART" buttonIcon="keyboard-arrow-right" />
+      </Container>
+  );
+
+}

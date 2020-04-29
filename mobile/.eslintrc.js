@@ -26,6 +26,7 @@ module.exports = {
     'prettier',
   ],
   rules: {
+    "arrowParens": "avoid",
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
       'warn',

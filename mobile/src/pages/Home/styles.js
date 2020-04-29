@@ -49,7 +49,7 @@ export const ProductPrice = styled.Text`
   font-weight: bold;
 `;
 
-export const ProductImage = styled.Image`
+export const Image = styled.Image`
   height: 200px;
   width: 200px;
   align-self: center;
