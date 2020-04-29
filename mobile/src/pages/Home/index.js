@@ -5,13 +5,12 @@ import Footer from '../../components/footer';
 
 import {
   Container,
-  List,
   AddButton,
   ProductAmountText,
   Product,
   ProductTitle,
   ProductPrice,
-  Image,
+  ProductImage,
   AddButtonText,
   ProductAmount,
 } from './styles';
@@ -25,6 +24,8 @@ export default function Home() {
     async function loadProducts() {
       const response = await api.get('products');
 
+
+
       const data = response.data.map(product => ({
         ...product,
       }));
@@ -33,20 +34,20 @@ export default function Home() {
     }
     loadProducts();
   }, []);
-  console.tron.log(products);
+
 
   return (
+    <>
       <Container>
-        <List>
-          { products.map(product => (
+        {products.map(product => (
+
             <Product key={product.id}>
-              <Image
-                src={product.image}
-                alt={product.title}
+              <ProductImage
+                source={{ uri: product.image }}
               />
               <ProductTitle>{product.title}</ProductTitle>
 
-              <ProductPrice>$6.50</ProductPrice>
+              <ProductPrice>${product.price}</ProductPrice>
               <AddButton>
                 <ProductAmount>
                   <Icon name="add-shopping-cart" color="#FFF" size={20} />
@@ -55,10 +56,13 @@ export default function Home() {
                 <AddButtonText>ADD TO CART</AddButtonText>
               </AddButton>
             </Product>
-          ))}
-        </List>
-        <Footer buttonTitle="GO TO CART" buttonIcon="keyboard-arrow-right" />
+
+        ))}
+
+
       </Container>
+      <Footer buttonTitle="GO TO CART" buttonIcon="keyboard-arrow-right" />
+  </>
   );
 
 }

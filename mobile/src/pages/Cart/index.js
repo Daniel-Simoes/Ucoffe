@@ -34,6 +34,8 @@ export default function Cart() {
     loadProducts();
   }, []);
 
+  console.tron.log(products);
+
   return (
     <>
       <Container>
