@@ -30,6 +30,14 @@ export default function Cart() {
 
   const dispatch = useDispatch();
 
+  function increment(product) {
+    dispatch(CartActions.updateAmount(product.id, product.amount + 1));
+  }
+
+  function decrement(product) {
+    dispatch(CartActions.updateAmount(product.id, product.amount - 1));
+  }
+
   return (
     <>
       <Container>
@@ -51,11 +59,13 @@ export default function Cart() {
             <ProductOrderInfo>
               <ProductAmountControl>
                 <ProductAmountButton>
-                  <Icon name="remove-circle-outline" size={22} color="#FFF" />
+                  <Icon name="remove-circle-outline" size={20} color="#FFF"
+                  onPress={() => decrement(product)} />
                 </ProductAmountButton>
                 <ProductAmount readOnly >{product.amount}</ProductAmount>
                 <ProductAmountButton>
-                  <Icon name="add-circle-outline" size={22} color="#FFF" />
+                  <Icon name="add-circle-outline" size={20} color="#FFF"
+                  onPress={() => increment(product)} />
                 </ProductAmountButton>
               </ProductAmountControl>
               <ProductSubtotal>$6,50</ProductSubtotal>
