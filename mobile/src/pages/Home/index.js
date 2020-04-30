@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
@@ -21,6 +21,13 @@ import {
 
 export default function Home() {
   const [products, setProducts] = useState([]);
+
+  const amount = useSelector(state =>
+    state.cart.reduce((sumAmount, product) => {
+      sumAmount[product.id] = product.amount;
+      return sumAmount;
+    }, {})
+  );
 
 
   const dispatch = useDispatch();
@@ -63,7 +70,7 @@ export default function Home() {
               <AddButton onPress={() => handleAddProduct(product)}>
                 <ProductAmount>
                   <Icon name="add-shopping-cart" color="#FFF" size={20} />
-                  <ProductAmountText>100</ProductAmountText>
+                  <ProductAmountText>{amount[product.id] || 0}</ProductAmountText>
                 </ProductAmount>
                 <AddButtonText>ADD TO CART</AddButtonText>
               </AddButton>
