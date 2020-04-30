@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Footer from '../../components/footer';
 
@@ -19,27 +20,17 @@ import {
 } from './styles';
 
 export default function Cart() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    async function loadProducts() {
-      const response = await api.get('products');
-
-      const data = response.data.map(product => ({
-        ...product,
-      }));
-
-      setProducts(data);
-    }
-    loadProducts();
-  }, []);
-
+  const cart = useSelector(state =>
+    state.cart.map(product => ({
+      ...product,
+    }))
+  );
 
   return (
     <>
       <Container>
         <Box>
-        {products.map(product => (
+        {cart.map(product => (
           <Product key={product.id}>
             <ProductImage
               source={{ uri: product.image }}
@@ -56,7 +47,7 @@ export default function Cart() {
                 <ProductAmountButton>
                   <Icon name="remove-circle-outline" size={22} color="#FFF" />
                 </ProductAmountButton>
-                <ProductAmount>100</ProductAmount>
+                <ProductAmount readOnly >{product.amount}</ProductAmount>
                 <ProductAmountButton>
                   <Icon name="add-circle-outline" size={22} color="#FFF" />
                 </ProductAmountButton>
