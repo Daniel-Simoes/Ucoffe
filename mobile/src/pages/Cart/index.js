@@ -4,6 +4,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Footer from '../../components/footer';
 
 import * as CartActions from '../../store/modules/cart/actions';
+import { formatPrice } from '../../util/format';
+
 
 import {
   Container,
@@ -25,7 +27,16 @@ export default function Cart() {
   const cart = useSelector(state =>
     state.cart.map(product => ({
       ...product,
+      subtotal: formatPrice(product.price * product.amount),
     }))
+  );
+
+  const total = useSelector(state =>
+    formatPrice(
+      state.cart.reduce((total, product) => {
+        return total + product.price * product.amount;
+      }, 0)
+    )
   );
 
   const dispatch = useDispatch();
@@ -49,7 +60,7 @@ export default function Cart() {
             />
             <ProductInfo>
               <ProductTitle>{product.title}</ProductTitle>
-              <ProductPrice>${product.price}</ProductPrice>
+              <ProductPrice>{product.price}</ProductPrice>
               <ProductRemove type="button"
               onPress={() =>
                 dispatch(CartActions.removeFromCart(product.id))}>
@@ -68,7 +79,7 @@ export default function Cart() {
                   onPress={() => increment(product)} />
                 </ProductAmountButton>
               </ProductAmountControl>
-              <ProductSubtotal>$6,50</ProductSubtotal>
+              <ProductSubtotal>{product.subtotal}</ProductSubtotal>
             </ProductOrderInfo>
           </Product>
           ))}
