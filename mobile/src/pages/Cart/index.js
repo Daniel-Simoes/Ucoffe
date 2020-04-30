@@ -64,18 +64,18 @@ export default function Cart() {
               <ProductRemove type="button"
               onPress={() =>
                 dispatch(CartActions.removeFromCart(product.id))}>
-                <Icon name="delete-forever" size={28} color="#999" />
+                <Icon name="delete-forever" size={28} color="#444" />
               </ProductRemove>
             </ProductInfo>
             <ProductOrderInfo>
               <ProductAmountControl>
                 <ProductAmountButton>
-                  <Icon name="remove-circle-outline" size={20} color="#FFF"
+                  <Icon name="remove-circle-outline" size={20} color="#bc7831"
                   onPress={() => decrement(product)} />
                 </ProductAmountButton>
                 <ProductAmount readOnly >{product.amount}</ProductAmount>
                 <ProductAmountButton>
-                  <Icon name="add-circle-outline" size={20} color="#FFF"
+                  <Icon name="add-circle-outline" size={20} color="#bc7831"
                   onPress={() => increment(product)} />
                 </ProductAmountButton>
               </ProductAmountControl>

@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
-  height: 70px;
+  height: 75px;
   background: #3e3e3f;
   opacity: 0.9;
   border-top-color: rgba(0, 0, 0, 0.05);
@@ -19,7 +19,7 @@ export const Wrapper = styled.View`
 
 export const Button = styled(RectButton)`
   background: #bc7831;
-  padding: 8px 10px 8px 12px;
+  padding: 5px 10px 8px 12px;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -31,6 +31,8 @@ export const ButtonText = styled.Text`
   font-size: 13px;
   font-weight: bold;
   margin-right: 5px;
+  margin-top: 1px;
+
 `;
 
 export const TotalWrapper = styled.View``;
@@ -40,7 +42,8 @@ export const TotalLabel = styled.Text`
   color: rgba(255, 255, 255, 0.5);
 `;
 export const TotalValue = styled.Text`
-  font-size: 20px;
+  font-size: 21px;
   font-weight: bold;
   color: #fff;
+  margin-top: 2px;
 `;

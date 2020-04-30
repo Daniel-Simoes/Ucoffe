@@ -14,7 +14,7 @@ export default function Header () {
       </Logo>
       <CartButton onPress={() => NavigationService.navigate('Cart')}>
         <Icon name="shopping-cart" size={28} color="#fff" />
-        <Badge>{cartSize} </Badge>
+        <Badge>{cartSize || 0}</Badge>
       </CartButton>
     </Container>
   );

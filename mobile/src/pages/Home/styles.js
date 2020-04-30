@@ -11,7 +11,7 @@ export const Container = styled.View`
 export const List = styled.FlatList``;
 
 export const AddButton = styled(RectButton)`
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
   flex-direction: row;
   align-items: center;
   border-radius: 4px;
@@ -24,7 +24,7 @@ export const ProductAmountText = styled.Text`
 `;
 
 export const Product = styled.View`
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   margin: 0 20px 20px;
 
   border-radius: 3px;
@@ -33,20 +33,23 @@ export const Product = styled.View`
 `;
 
 export const ProductTitle = styled.Text`
-  font-size: 16px;
+  font-size: 22px;
   margin: 0 8px;
+  color: #999;
+  font-weight: bold;
 `;
 
 export const ProductDescription = styled.Text`
-  font-size: 16px;
+  font-size: 22px;
   margin: 0 8px;
   color: #fff;
 `;
 
 export const ProductPrice = styled.Text`
   margin: 0 10px 15px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
+  color: #bc7831;
 `;
 
 export const ProductImage = styled.Image`
@@ -60,7 +63,7 @@ export const AddButtonText = styled.Text`
   flex: 1;
   text-align: center;
   font-weight: bold;
-  color: #fff;
+  color: #999;
 `;
 
 export const ProductAmount = styled.View`

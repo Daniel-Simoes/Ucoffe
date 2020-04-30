@@ -4,6 +4,7 @@ import { ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
 import Footer from '../../components/footer';
+import SocialMidia from '../../components/SocialMidia';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
@@ -79,8 +80,10 @@ export default function Home() {
         ))}
 
 </ScrollView>
+
       </Container>
       <Footer buttonTitle="GO TO CART" buttonIcon="keyboard-arrow-right" />
+      <SocialMidia />
   </>
   );
 

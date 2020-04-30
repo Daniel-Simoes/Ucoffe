@@ -21,6 +21,6 @@ export const LogoImage = styled.Image.attrs({
   resizeMode: 'contain',
 })`
   width: 200px;
-  margin-top: -100px;
+  margin-top: -50px;
   opacity: 0.3;
 `;

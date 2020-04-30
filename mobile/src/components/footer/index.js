@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { formatPrice } from '../../util/format';
+import NavigationService from '../../services/navigation';
 
 import {
   Container,
@@ -36,7 +37,7 @@ export default function BottomBar({ buttonTitle, buttonIcon }) {
           <TotalLabel>TOTAL</TotalLabel>
           <TotalValue>{total}</TotalValue>
         </TotalWrapper>
-        <Button>
+        <Button onPress={() => NavigationService.navigate('Cart')}>
           <ButtonText>{buttonTitle}</ButtonText>
           <Icon name={buttonIcon} color="#FFF" size={18} />
         </Button>

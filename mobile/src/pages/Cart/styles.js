@@ -1,46 +1,4 @@
 import styled from 'styled-components/native';
-import { RectButton } from 'react-native-gesture-handler';
-
-export const EmptyCart = styled.View`
-  background: #3a3b3d;
-  flex: 1;
-`;
-
-export const EmptyBox = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.1);
-  padding: 20px;
-`;
-
-export const Title = styled.Text`
-  font-size: 18px;
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.5);
-  margin: 20px 0 5px;
-`;
-
-export const Message = styled.Text`
-  font-size: 13px;
-  color: rgba(0, 0, 0, 0.35);
-  margin-bottom: 25px;
-`;
-
-export const Button = styled(RectButton)`
-  background: #fff;
-  padding: 8px 12px;
-  border-radius: 3px;
-`;
-
-export const ButtonText = styled.Text`
-  color: #3a3b3d;
-  font-size: 13px;
-  font-weight: bold;
-  margin-right: 5px;
-`;
 
 export const Container = styled.ScrollView`
   flex: 1;
@@ -49,9 +7,10 @@ export const Container = styled.ScrollView`
 
 export const Box = styled.View`
   margin: 20px;
+  margin-top: -20px;
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 0;
+  background: rgba(0, 0, 0, 0.3);
+  padding-top: 20px;
   elevation: 2;
 `;
 export const Product = styled.View`
@@ -64,17 +23,20 @@ export const Product = styled.View`
 
 export const ProductInfo = styled.View`
   flex-shrink: 1;
-  margin: 0 10px;
+  margin: 0 25px;
 `;
 
 export const ProductTitle = styled.Text`
-  font-size: 13px;
+  font-size: 16px;
+  color: #999;
+  font-weight: bold;
+  margin-top: 5px;
 `;
 
 export const ProductPrice = styled.Text`
-  font-size: 11px;
-  color: #888;
-  margin-bottom: 5px;
+  font-size: 14px;
+  color: #bc7831;
+  margin-top: 5px;
 `;
 
 export const ProductOrderInfo = styled.View`
@@ -88,25 +50,32 @@ export const ProductAmountControl = styled.View`
   align-items: center;
 `;
 
-export const ProductAmountButton = styled.TouchableOpacity``;
+export const ProductAmountButton = styled.TouchableOpacity`
+margin-top: 5px;
+`;
 
 export const ProductAmount = styled.Text`
   text-align: center;
   width: 36px;
-  font-size: 15px;
+  font-size: 16px;
+  margin-top: 5px;
+
+  color: #FFF;
 `;
 
 export const ProductSubtotal = styled.Text`
   margin-top: auto;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
+  color: #888;
 `;
 
 export const ProductImage = styled.Image`
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   align-self: center;
   border-radius: 100px;
+  margin-left: 2px;
 `;
 
 export const ProductRemove = styled.TouchableOpacity`

@@ -4,10 +4,10 @@ import logo from '../../assents/images/logo.png';
 
 export const Container = styled.View`
   flex-direction: row;
-  height: 175px;
+  height: 140px;
   justify-content: space-between;
   align-items: center;
-  padding: 0 25px 0 15px;
+  padding: 25px 25px 0 15px;
   background: #3a3b3d;
   elevation: 2;
 `;
@@ -36,6 +36,7 @@ export const Badge = styled.Text`
   background: #bc7831;
   width: 18px;
   height: 18px;
+  border-radius: 80px
   padding-top: 1px;
   right: -6px;
   top: -8px;
