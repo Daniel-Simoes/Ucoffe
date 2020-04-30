@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Footer from '../../components/footer';
 
+import * as CartActions from '../../store/modules/cart/actions';
+
 import {
   Container,
   Box,
@@ -42,7 +44,7 @@ export default function Cart() {
               <ProductPrice>${product.price}</ProductPrice>
               <ProductRemove type="button"
               onPress={() =>
-                dispatch({ type: 'REMOVE_FROM_CART', id: product.id})}>
+                dispatch(CartActions.removeFromCart(product.id))}>
                 <Icon name="delete-forever" size={28} color="#999" />
               </ProductRemove>
             </ProductInfo>

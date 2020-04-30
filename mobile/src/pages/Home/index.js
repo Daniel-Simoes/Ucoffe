@@ -5,6 +5,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
 import Footer from '../../components/footer';
 
+import * as CartActions from '../../store/modules/cart/actions';
+
 import {
   Container,
   AddButton,
@@ -41,10 +43,7 @@ export default function Home() {
 
   function handleAddProduct(product) {
     // dispara uma ACTION para o redux
-    dispatch({
-      type: 'ADD_TO_CART',
-      product,
-    });
+    dispatch(CartActions.addToCart(product));
   }
 
 
