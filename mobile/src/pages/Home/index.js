@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
@@ -20,6 +21,8 @@ export default function Home() {
   const [products, setProducts] = useState([]);
 
 
+  const dispatch = useDispatch();
+
 
   useEffect(() => {
     async function loadProducts() {
@@ -36,6 +39,14 @@ export default function Home() {
     loadProducts();
   }, []);
 
+  function handleAddProduct(product) {
+    // dispara uma ACTION para o redux
+    dispatch({
+      type: 'ADD_TO_CART',
+      product,
+    });
+  }
+
 
   return (
     <>
@@ -50,7 +61,7 @@ export default function Home() {
               <ProductTitle>{product.title}</ProductTitle>
 
               <ProductPrice>${product.price}</ProductPrice>
-              <AddButton>
+              <AddButton onPress={() => handleAddProduct(product)}>
                 <ProductAmount>
                   <Icon name="add-shopping-cart" color="#FFF" size={20} />
                   <ProductAmountText>100</ProductAmountText>
@@ -68,3 +79,4 @@ export default function Home() {
   );
 
 }
+

@@ -36,7 +36,6 @@ export const Badge = styled.Text`
   background: #bc7831;
   width: 18px;
   height: 18px;
-  border-radius: 8px;
   padding-top: 1px;
   right: -6px;
   top: -8px;
