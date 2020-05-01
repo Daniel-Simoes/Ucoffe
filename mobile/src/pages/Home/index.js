@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '../../services/api';
 import Footer from '../../components/footer';
 import SocialMidia from '../../components/SocialMidia';
+import { formatPrice } from '../../util/format';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
@@ -49,9 +50,9 @@ export default function Home() {
     loadProducts();
   }, []);
 
-  function handleAddProduct(product) {
+  function handleAddProduct(id) {
     // dispara uma ACTION para o redux
-    dispatch(CartActions.addToCart(product));
+    dispatch(CartActions.addToCartRequest(id));
   }
 
 
@@ -67,8 +68,8 @@ export default function Home() {
               />
               <ProductTitle>{product.title}</ProductTitle>
 
-              <ProductPrice>${product.price}</ProductPrice>
-              <AddButton onPress={() => handleAddProduct(product)}>
+              <ProductPrice>€{product.price}</ProductPrice>
+              <AddButton onPress={() => handleAddProduct(product.id)}>
                 <ProductAmount>
                   <Icon name="add-shopping-cart" color="#FFF" size={20} />
                   <ProductAmountText>{amount[product.id] || 0}</ProductAmountText>
