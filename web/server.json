@@ -90,6 +90,13 @@
       "content": "Vanilla syrup, and steamed milk, topped with whipped cream and caramel sauce.",
       "price": 8.40,
       "image": "https://copykat.com/wp-content/uploads/2019/10/starbucks-iced-white-chocolate-mocha-recipe-500x500.jpg"
+    },
+    {
+      "id": 1,
+      "title": "Americano",
+      "content": "A long black coffee, prepared by diluting an espresso with hot water.",
+      "price": 6.50,
+      "image": "https://www.waterymouthcafe.co.nz/wp-content/uploads/2017/07/The-insiders-guide-to-great-coffee-from-the-baristas-at-Watery-Mouth-cafe-Blenheim1-500x500.jpg"
     }
   ]
 }
