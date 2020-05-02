@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="uCoffee" src="https://github.com/Daniel-Simoes/Ucoffe/blob/master/uCoffeeLogo.ai" />
+    <img alt="uCoffee" src="https://github.com/Daniel-Simoes/Ucoffe/blob/master/ucoffeLogo.jpg" />
     <br>
 </h1>
 
