@@ -1,7 +1,7 @@
 import { call, select, put, all, takeLatest } from 'redux-saga/effects';
 import api from '../../../services/api';
 import { Alert } from 'react-native';
-import { addToCartSuccess, updateAmount } from './actions';
+import { addToCartSuccess, updateAmountSuccess } from './actions';
 import { formatPrice } from '../../../util/format';
 
 function* addToCart({ id }) {
@@ -23,7 +23,7 @@ function* addToCart({ id }) {
 
   if (productExists) {
 
-    yield put(updateAmount(id, amount));
+    yield put(updateAmountSuccess(id, amount));
 
     } else {
 
@@ -37,11 +37,25 @@ function* addToCart({ id }) {
 
         yield put(addToCartSuccess(data));
     }
+  }
 
+    function* updateAmount({ id, amount }) {
+      if (amount <= 0) return;
 
-}
+      const stock = yield call(api.get, `/stock/${id}`);
+      const stockAmount = stock.data.amount;
+
+      if (amount > stockAmount) {
+        Alert.alert('Sorry', 'Amount requested is out of stock.');
+        return;
+      }
+
+      yield put(updateAmountSuccess(id, amount));
+    }
+
 
 // which action to listen to and which method to fire
 export default all([
   takeLatest('@cart/ADD_REQUEST', addToCart),
+  takeLatest('@cart/UPDATE_AMOUNT_REQUEST', updateAmount),
 ]);
