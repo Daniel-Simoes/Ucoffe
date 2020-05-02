@@ -1,6 +1,6 @@
 <h1 align="center">
-    
-    uCoffee
+    <img alt="uCoffee" src="https://github.com/Daniel-Simoes/Ucoffe/blob/master/uCoffeeLogo.ai" />
+    <br>
 </h1>
 
 This small project is the mobile and Web version of Cafe, an application developed during quaretine periodo using Redux and Redux Saga.
@@ -11,22 +11,61 @@ The structure used for this application is scalable, so fell free to use in your
 
 The fake data comes from Json Server
 
-## 💻 Apresentation Web
+## 💻 Web Apresentation
 
-   ![uCoffeeDesktop](https://github.com/Daniel-Simoes/Ucoffe/blob/master/ucoffeeDesktop.gif)
+<p align="center">
+  <img alt="uCoffe Desktop Gif" src="https://github.com/Daniel-Simoes/Ucoffe/blob/master/ucoffeDesktop.gif">
+</p>
 
-## :rocket:uCoffee Installation
+## :rocket:uCoffee Web Installation
 
 Clone the repository
 
 ```bash
-git clone + url's repository
+git clone https://github.com/Daniel-Simoes/Ucoffe.git
 ```
 
-Open a terminal on the repository folder and install the dependencies:
+Open a terminal on the repository and look for Web's folder and install the dependencies:
 
 ```bash
 yarn install
+```
+
+To run the Server use:
+
+```bash
+json-server server.json -p 3333
+```
+
+To run the application use:
+
+```bash
+yarn start
+```
+
+## 📱 Mobile Apresentation
+<p align="center">
+  <img alt="uCoffee Mobile Gif" src="https://github.com/Daniel-Simoes/Ucoffe/blob/master/uCoffeeMobile.gif">
+</p>
+
+## :rocket:uCoffee Mobile Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Daniel-Simoes/Ucoffe.git
+```
+
+Open a terminal on the repository and look for Mobile's folder and install the dependencies:
+
+```bash
+yarn install
+```
+
+To run the Server use:
+
+```bash
+json-server server.json -p 3333
 ```
 
 To run the application use:
